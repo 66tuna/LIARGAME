@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
-        <div className="bg-primary">{children}</div>
+        <div>{children}</div>
       </body>
     </html>
   );

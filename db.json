@@ -1,23 +1,20 @@
 {
-  "topics": [
-    { "id": 1, "title": "html", "body": "html is..." },
-    { "id": 2, "title": "css", "body": "css is..." }
+  "fruit": [
+    { "id": "1", "name": "사과" },
+    { "id": "2", "name": "멜론" },
+    { "id": "3", "name": "망고" },
+    { "id": "4", "name": "수박" }
   ],
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
+  "animal": [
+    { "id": "1", "name": "강아지" },
+    { "id": "2", "name": "고양이" },
+    { "id": "3", "name": "사자" },
+    { "id": "4", "name": "부엉이" }
   ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  "음식": [
+    { "id": "1", "name": "제육볶음" },
+    { "id": "2", "name": "탕후르" },
+    { "id": "3", "name": "마라탕" },
+    { "id": "4", "name": "돈까스" }
+  ]
 }
