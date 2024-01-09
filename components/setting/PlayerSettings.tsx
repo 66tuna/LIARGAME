@@ -27,10 +27,8 @@ const PlayerSettings = () => {
     const currentIndex = swiper.activeIndex;
     setPlayerNum(currentIndex);
 
-    console.log(currentIndex, mafiaNum, swiper2Ref.current);
     if (currentIndex < mafiaNum && swiper2Ref.current) {
-      console.log("마피아 움직여");
-      swiper2Ref.current?.slideTo(mafiaNum);
+      swiper2Ref.current?.swiper.slideTo(currentIndex);
     }
   };
 
@@ -39,19 +37,19 @@ const PlayerSettings = () => {
     setMafiaNum(swiper.activeIndex);
 
     if (currentIndex > playerNum && swiper1Ref.current) {
-      swiper1Ref.current?.slideTo(playerNum);
+      swiper1Ref.current?.swiper.slideTo(currentIndex);
     }
   };
 
   return (
-    <div className="flex">
+    <div className="flex mb-12">
       <div className="w-1/2">
         <h2>플레이어</h2>
         <Swiper
           navigation={true}
           modules={[Navigation]}
           className="mySwiper"
-          ref={(swiper) => (swiper1Ref.current = swiper)}
+          ref={swiper1Ref}
           onSlideChange={handleSwiper1SlideChange}
           initialSlide={playerNum}
         >
@@ -68,7 +66,7 @@ const PlayerSettings = () => {
           navigation={true}
           modules={[Navigation]}
           className="mySwiper"
-          ref={(swiper) => (swiper2Ref.current = swiper)}
+          ref={swiper2Ref}
           onSlideChange={handleSwiper2SlideChange}
           initialSlide={mafiaNum}
         >

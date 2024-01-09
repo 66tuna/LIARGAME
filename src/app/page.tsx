@@ -1,3 +1,4 @@
+import CategorySetting from "../../components/setting/CategorySetting";
 import PlayerSettings from "../../components/setting/PlayerSettings";
 
 export default function Home() {
@@ -5,6 +6,7 @@ export default function Home() {
     <>
       <div>
         <PlayerSettings />
+        <CategorySetting />
       </div>
     </>
   );
