@@ -23,21 +23,25 @@ const PlayerSettings = () => {
   const swiper1Ref = useRef<any>(null);
   const swiper2Ref = useRef<any>(null);
 
-  const handleSwiper1SlideChange = (swiper: any) => {
-    setPlayerNum(swiper.activeIndex);
-  };
+  const handleSwiper1SlideChange = (swiper: SlideChangeType) => {
+    const currentIndex = swiper.activeIndex;
+    setPlayerNum(currentIndex);
 
-  const handleSwiper2SlideChange = (swiper: any) => {
-    setMafiaNum(swiper.activeIndex);
-  };
-
-  useEffect(() => {
-    // swiper1Ref.current, swiper2Ref.current를 사용하여 Swiper 인스턴스에 접근할 수 있습니다.
-    if (swiper1Ref.current && swiper2Ref.current) {
-      swiper1Ref.current.swiper.slideTo(mafiaNum);
-      swiper2Ref.current.swiper.slideTo(playerNum);
+    console.log(currentIndex, mafiaNum, swiper2Ref.current);
+    if (currentIndex < mafiaNum && swiper2Ref.current) {
+      console.log("마피아 움직여");
+      swiper2Ref.current?.slideTo(mafiaNum);
     }
-  }, [playerNum, mafiaNum]);
+  };
+
+  const handleSwiper2SlideChange = (swiper: SlideChangeType) => {
+    const currentIndex = swiper.activeIndex;
+    setMafiaNum(swiper.activeIndex);
+
+    if (currentIndex > playerNum && swiper1Ref.current) {
+      swiper1Ref.current?.slideTo(playerNum);
+    }
+  };
 
   return (
     <div className="flex">
@@ -47,7 +51,7 @@ const PlayerSettings = () => {
           navigation={true}
           modules={[Navigation]}
           className="mySwiper"
-          ref={swiper1Ref}
+          ref={(swiper) => (swiper1Ref.current = swiper)}
           onSlideChange={handleSwiper1SlideChange}
           initialSlide={playerNum}
         >
@@ -64,7 +68,7 @@ const PlayerSettings = () => {
           navigation={true}
           modules={[Navigation]}
           className="mySwiper"
-          ref={swiper2Ref}
+          ref={(swiper) => (swiper2Ref.current = swiper)}
           onSlideChange={handleSwiper2SlideChange}
           initialSlide={mafiaNum}
         >
