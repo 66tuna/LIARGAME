@@ -2,7 +2,7 @@
   "name": "liar-game",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://66tuna.github.io/",
+  "homepage": "https://66tuna.github.io/LIARGAME",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
