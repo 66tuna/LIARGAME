@@ -44,7 +44,7 @@ const PlayerSettings = () => {
   return (
     <div className="flex mb-12">
       <div className="w-1/2">
-        <h2>플레이어</h2>
+        <h2>전체 플레이어</h2>
         <Swiper
           navigation={true}
           modules={[Navigation]}
