@@ -14,6 +14,7 @@ const nextConfig = {
   },
   basePath: isProduction ? "/LIARGAME" : "",
   assetPrefix: isProduction ? "/LIARGAME/" : "",
+  output: "export",
   distDir: 'dist'
 };
 
