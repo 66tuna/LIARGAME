@@ -3,11 +3,9 @@ import PlayerSettings from "../../components/setting/PlayerSettings";
 
 export default function Home() {
   return (
-    <>
-      <div>
-        <PlayerSettings />
-        <CategorySetting />
-      </div>
-    </>
+    <div>
+      <PlayerSettings />
+      <CategorySetting />
+    </div>
   );
 }
