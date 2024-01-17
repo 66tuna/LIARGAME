@@ -10,10 +10,11 @@
     "predeploy": "npm run build",
     "lint": "next lint",
     "export": "next build && next export",
-    "deploy": "yarn run export && gh-pages -d out"
+    "deploy": "npm run export && gh-pages -d out"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.10",
+    "cors": "^2.8.5",
     "next": "^14.0.4",
     "pnpm": "^8.14.0",
     "react": "^18",
