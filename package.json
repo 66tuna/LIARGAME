@@ -5,15 +5,16 @@
   "homepage": "https://66tuna.github.io/LIARGAME",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
     "start": "next start",
     "predeploy": "npm run build",
     "lint": "next lint",
-    "deploy": "touch out/.nojekyll && gh-pages -d out --dotfiles"
+    "export": "next build && next export",
+    "deploy": "yarn run export && gh-pages -d out"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.10",
-    "next": "14.0.4",
+    "next": "^14.0.4",
     "pnpm": "^8.14.0",
     "react": "^18",
     "react-dom": "^18",

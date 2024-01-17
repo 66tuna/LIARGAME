@@ -6,10 +6,7 @@ const isProduction = process.env.NODE_ENV === "production";
 // }
 
 const nextConfig = {
-  output: "export",
-  compiler: {
-    styledComponents: true,
-  },
+  reactStrictMode: true,
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -17,7 +14,13 @@ const nextConfig = {
     loader: "akamai",
     path: isProduction ? "https://66tuna.github.io" : "http://localhost:3000",
   },
-  assetPrefix: isProduction ? "/LIARGAME" : "",
+  basePath: isProduction ? "/LIARGAME" : "",
+  assetPrefix: isProduction ? "/LIARGAME/" : "",
+  output: "export", // 이 부분 추가
 };
 
-module.exports = nextConfig;
+module.exports = isProduction
+  ? {
+      ...nextConfig,
+    }
+  : nextConfig;
