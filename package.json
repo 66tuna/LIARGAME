@@ -9,11 +9,13 @@
     "start": "next start",
     "predeploy": "npm run build",
     "lint": "next lint",
-    "deploy": "next export && touch out/.nojekyll && git add -f out/ && git commit -m \"Deploy\" && git subtree split --prefix out -b gh-pages && git push -f origin gh-pages:gh-pages && git branch -D gh-pages"
+    "export": "next build && next export",
+    "deploy": "npm run build && gh-pages -d dist -b gh-pages"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.10",
-    "next": "14.0.4",
+    "cors": "^2.8.5",
+    "next": "^14.0.4",
     "pnpm": "^8.14.0",
     "react": "^18",
     "react-dom": "^18",

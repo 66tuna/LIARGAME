@@ -2,17 +2,24 @@
 const isProduction = process.env.NODE_ENV === "production";
 
 const nextConfig = {
-  compiler: {
-    styledComponents: true,
-  },
+  reactStrictMode: true,
   eslint: {
     ignoreDuringBuilds: true,
   },
   images: {
+    domains: ['i.postimg.cc'],
+    unoptimized: true,
     loader: "akamai",
     path: isProduction ? "https://66tuna.github.io" : "http://localhost:3000",
   },
-  assetPrefix: isProduction ? "/LIARGAME" : "",
+  basePath: isProduction ? "/LIARGAME" : "",
+  assetPrefix: isProduction ? "/LIARGAME/" : "",
+  output: "export",
+  distDir: 'dist'
 };
 
-module.exports = nextConfig;
+module.exports = isProduction
+  ? {
+    ...nextConfig,
+  }
+  : nextConfig;
