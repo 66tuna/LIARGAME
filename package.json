@@ -10,7 +10,7 @@
     "predeploy": "npm run build",
     "lint": "next lint",
     "export": "next build && next export",
-    "deploy": "npm run build && gh-pages -d dist"
+    "deploy": "npm run build && gh-pages -d dist -b gh-pages"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.10",
